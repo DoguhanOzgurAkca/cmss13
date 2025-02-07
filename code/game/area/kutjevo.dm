@@ -302,25 +302,25 @@
 
 /area/kutjevo/interior/colony_north
 	name = "Kutjevo - North Colony Caves"
-	ceiling = CEILING_DEEP_UNDERGROUND
+	ceiling = CEILING_UNDERGROUND_BLOCK_CAS
 	icon_state = "colony_caves_1"
 	unoviable_timer = FALSE
 
 /area/kutjevo/interior/colony_S_East
 	name = "Kutjevo - North East Colony Caves"
-	ceiling = CEILING_DEEP_UNDERGROUND
+	ceiling = CEILING_UNDERGROUND_BLOCK_CAS
 	icon_state = "colony_caves_2"
 	unoviable_timer = FALSE
 
 /area/kutjevo/interior/colony_N_East
 	name = "Kutjevo - South East Colony Caves"
-	ceiling = CEILING_DEEP_UNDERGROUND
+	ceiling = CEILING_UNDERGROUND_BLOCK_CAS
 	icon_state = "colony_caves_2"
 	unoviable_timer = FALSE
 
 /area/kutjevo/interior/colony_South
 	name = "Kutjevo - South Colony Caves"
-	ceiling = CEILING_DEEP_UNDERGROUND
+	ceiling = CEILING_UNDERGROUND_BLOCK_CAS
 	icon_state = "colony_caves_3"
 
 /area/kutjevo/interior/colony_South/power2
