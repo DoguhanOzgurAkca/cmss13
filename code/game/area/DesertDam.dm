@@ -215,6 +215,7 @@
 
 /area/desert_dam/interior/dam_interior/engineering_road
 	name = "Engineering Road"
+	ceiling =  CEILING_NONE
 	icon_state = "green"
 
 /area/desert_dam/interior/caves
