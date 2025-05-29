@@ -16,6 +16,7 @@
 /area/desert_dam/interior/lab_northeast
 	name = "Northeastern Lab"
 	icon_state = "purple"
+	ceiling = CEILING_UNDERGROUND_METAL_BLOCK_CAS
 	minimap_color = MINIMAP_AREA_RESEARCH
 	unoviable_timer = FALSE
 
@@ -72,40 +73,45 @@
 	icon_state = "armory"
 
 //Dam Interior
-/area/desert_dam/interior/dam_interior
+/area/desert_dam/interior/dam
 	minimap_color = MINIMAP_AREA_ENGI
+	ceiling = CEILING_UNDERGROUND_METAL_ALLOW_CAS
 
-/area/desert_dam/interior/dam_interior/engine_room
+/area/desert_dam/interior/dam/engine_room
 	name = "Engineering Generator Room"
 	icon_state = "yellow"
 
-/area/desert_dam/interior/dam_interior/control_room
+/area/desert_dam/interior/dam/control_room
 	name = "Engineering Control Room"
 	icon_state = "red"
 
-/area/desert_dam/interior/dam_interior/smes_main
+/area/desert_dam/interior/dam/smes_main
 	name = "Engineering Main Substation"
 	icon_state = "purple"
 
-/area/desert_dam/interior/dam_interior/smes_backup
+/area/desert_dam/interior/dam/smes_backup
 	name = "Engineering Secondary Backup Substation"
 	icon_state = "green"
 
-/area/desert_dam/interior/dam_interior/engine_east_wing
+/area/desert_dam/interior/dam/engine_east_wing
 	name = "Engineering East Engine Wing"
 	icon_state = "blue-red"
 
-/area/desert_dam/interior/dam_interior/engine_west_wing
+/area/desert_dam/interior/dam/engine_west_wing
 	name = "Engineering West Engine Wing"
 	icon_state = "yellow"
 
-/area/desert_dam/interior/dam_interior/lobby
+/area/desert_dam/interior/dam/lobby
 	name = "Engineering Lobby"
 	icon_state = "purple"
 
-/area/desert_dam/interior/dam_interior/atmos_storage
+/area/desert_dam/interior/dam/atmos_storage
 	name = "Engineering Atmospheric Storage"
 	icon_state = "purple"
+
+//Dam Interior
+/area/desert_dam/interior/dam_interior
+	minimap_color = MINIMAP_AREA_ENGI
 
 /area/desert_dam/interior/dam_interior/northwestern_tunnel
 	name = "Engineering Northwestern Tunnel"
@@ -117,6 +123,7 @@
 
 /area/desert_dam/interior/dam_interior/west_tunnel
 	name = "Engineering Western Tunnel"
+	ceiling = CEILING_UNDERGROUND_METAL_ALLOW_CAS
 	icon_state = "yellow"
 
 /area/desert_dam/interior/dam_interior/central_tunnel
@@ -125,6 +132,11 @@
 
 /area/desert_dam/interior/dam_interior/south_tunnel
 	name = "Engineering Southern Tunnel"
+	icon_state = "purple"
+
+/area/desert_dam/interior/dam_interior/valley_tunnel
+	name = "Valley Tunnel"
+	ceiling = CEILING_UNDERGROUND_METAL_ALLOW_CAS
 	icon_state = "purple"
 
 /area/desert_dam/interior/dam_interior/northeastern_tunnel
@@ -139,8 +151,9 @@
 	name = "Engineering Workshop"
 	icon_state = "purple"
 
-/area/desert_dam/interior/dam_interior/hanger
+/area/desert_dam/interior/dam_interior/hangar
 	name = "Engineering Hangar"
+	ceiling = CEILING_METAL
 	icon_state = "hangar"
 	linked_lz = DROPSHIP_LZ1
 
@@ -170,6 +183,7 @@
 
 /area/desert_dam/interior/dam_interior/western_dam_cave
 	name = "Engineering West Entrance"
+	ceiling = CEILING_UNDERGROUND_ALLOW_CAS
 	icon_state = "red"
 
 /area/desert_dam/interior/dam_interior/office
@@ -179,13 +193,16 @@
 /area/desert_dam/interior/dam_interior
 	name = "Engineering"
 	icon_state = ""
+	ceiling = CEILING_SANDSTONE_ALLOW_CAS
 
 /area/desert_dam/interior/dam_interior/north_tunnel_entrance
 	name = "Engineering North Tunnel Entrance"
+	ceiling = CEILING_UNDERGROUND_METAL_ALLOW_CAS
 	icon_state = "yellow"
 
 /area/desert_dam/interior/dam_interior/east_tunnel_entrance
 	name = "Engineering East Tunnel Entrance"
+	ceiling = CEILING_UNDERGROUND_METAL_ALLOW_CAS
 	icon_state = "yellow"
 
 /area/desert_dam/interior/dam_interior/south_tunnel_entrance
@@ -194,6 +211,10 @@
 
 /area/desert_dam/interior/dam_interior/garage
 	name = "Garage"
+	icon_state = "green"
+
+/area/desert_dam/interior/dam_interior/engineering_road
+	name = "Engineering Road"
 	icon_state = "green"
 
 /area/desert_dam/interior/caves
@@ -317,6 +338,8 @@
 	name = "DO NOT USE"
 	icon_state = "purple"
 	unoviable_timer = FALSE
+	ceiling = CEILING_UNDERGROUND_METAL_BLOCK_CAS
+
 
 /area/desert_dam/building/cafeteria/cafeteria
 	name = "Cafeteria"
@@ -340,6 +363,7 @@
 	name = "DO NOT USE"
 	icon_state = "purple"
 	unoviable_timer = FALSE
+	ceiling = CEILING_UNDERGROUND_METAL_BLOCK_CAS
 
 /area/desert_dam/building/dorms/hallway_northwing
 	name = "Dormitory North Wing"
@@ -652,6 +676,8 @@
 	name = "DO NOT USE"
 	icon_state = "purple"
 	unoviable_timer = FALSE
+	ceiling = CEILING_UNDERGROUND_METAL_BLOCK_CAS
+
 
 /area/desert_dam/building/mining/workshop
 	name = "Mining Workshop"
@@ -768,6 +794,12 @@
 
 //Away from LZ
 
+/area/desert_dam/exterior/valley/valley_civilian
+	name = "Civilian Valley"
+	icon_state = "valley_south_excv"
+	unoviable_timer = FALSE
+	ceiling = CEILING_UNDERGROUND_METAL_BLOCK_CAS
+
 /area/desert_dam/exterior/valley/valley_labs
 	name = "Lab Valley"
 	icon_state = "valley_north"
@@ -775,11 +807,6 @@
 /area/desert_dam/exterior/valley/valley_mining
 	name = "Mining Valley"
 	icon_state = "valley_east"
-	unoviable_timer = FALSE
-
-/area/desert_dam/exterior/valley/valley_civilian
-	name = "Civilian Valley"
-	icon_state = "valley_south_excv"
 	unoviable_timer = FALSE
 
 /area/desert_dam/exterior/valley/valley_medical
@@ -795,6 +822,12 @@
 	name = "Crash Site Valley"
 	icon_state = "yellow"
 	unoviable_timer = FALSE
+
+/area/desert_dam/exterior/valley/valley_crashsite_deep
+	name = "Deep Crash Site Valley"
+	icon_state = "red"
+	unoviable_timer = FALSE
+	ceiling = CEILING_UNDERGROUND_METAL_BLOCK_CAS
 
 /area/desert_dam/exterior/valley/north_valley_dam
 	name = "North Dam Valley"
