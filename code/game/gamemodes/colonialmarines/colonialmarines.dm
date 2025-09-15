@@ -316,6 +316,9 @@
 
 		near_area.purge_weeds()
 
+	// Process weedkiller landmarks
+	clear_weedkiller_landmarks(cause_data)
+
 	addtimer(CALLBACK(src, PROC_REF(allow_proximity_resin)), near_lz_protection_delay)
 
 /**
@@ -335,6 +338,55 @@
 			continue
 
 		near_area.is_resin_allowed = TRUE
+
+/**
+ * Processes weedkiller landmarks and applies weedkiller effects to them
+ * and their surrounding areas based on their effect_radius
+ */
+/datum/game_mode/colonialmarines/proc/clear_weedkiller_landmarks(datum/cause_data/cause_data)
+	for(var/obj/effect/landmark/weedkiller_marker/marker in GLOB.landmarks_list)
+		if(!marker || QDELETED(marker))
+			continue
+			
+		var/marker_lz = marker.linked_lz
+		if(!marker_lz)
+			continue
+			
+		// Check if this marker should be affected by the current landing zone
+		if(islist(marker_lz))
+			if(!(active_lz.linked_lz in marker_lz))
+				continue
+		else if(marker_lz != active_lz.linked_lz)
+			continue
+			
+		// Apply weedkiller to marker location and surrounding area
+		apply_weedkiller_to_marker_area(marker, cause_data)
+
+/**
+ * Applies weedkiller effects to a marker's tile
+ */
+/datum/game_mode/colonialmarines/proc/apply_weedkiller_to_marker_area(obj/effect/landmark/weedkiller_marker/marker, datum/cause_data/cause_data)
+	if(!marker || QDELETED(marker))
+		return
+		
+	var/turf/marker_turf = get_turf(marker)
+	if(!marker_turf)
+		return
+	
+	// Skip dense turfs that aren't walls, same logic as area-based system
+	if(marker_turf.density)
+		if(!istype(marker_turf, /turf/closed/wall))
+			return
+		var/turf/closed/wall/wall = marker_turf
+		if(wall.turf_flags & TURF_HULL)
+			return
+			
+	new /obj/effect/particle_effect/smoke/weedkiller(marker_turf, null, cause_data)
+	
+	// Also purge weeds from the turf's area
+	var/area/turf_area = get_area(marker_turf)
+	if(turf_area)
+		turf_area.purge_weeds()
 
 /datum/game_mode/colonialmarines/proc/spawn_smallhosts()
 	if(!GLOB.players_preassigned)
